@@ -1,0 +1,275 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(3,22,54);
+    color: #f0f0f4;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    padding: 20px 0;
+    border-bottom: 2px solid #f0f0f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+   
+    color: white;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(55, 7, 231, 0.811);
+}
+
+/* Títulos */
+h3 {
+    margin: 30px 0 15px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Cursos */
+.courses {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.course {
+    width: 180px;
+    text-align: center;
+    background-color: rgb(5, 35, 80);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.course img {
+    width: 100%;
+    border-radius: 5px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.course p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Mapas e Street View */
+#street-view-container,
+#map {
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+    border: 1px solid #f1ecec;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Google Maps */
+gmp-map {
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+}
+
+/* Infraestrutura */
+.infraestrutura-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.infraestrutura-imagem img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.infraestrutura-texto {
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
+/* Ajuste a logo para ficar centralizada e com tamanho correto */
+header img.logo-uni {
+    max-width: 150px; /* Ajuste a largura conforme necessário */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.9; /* Torna o fundo ligeiramente transparente, caso queira efeito */
+}
+
+/* Parágrafo */
+p {
+    text-align: center;
+    color: #f0f0f4;
+    font-size: 14px;
+}
+
+/* Botão de Registrar */
+.bntentrar {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.bntentrar:hover {
+    background-color: rgb(0, 90, 190);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .courses {
+        gap: 15px;
+    }
+
+    #street-view-container,
+    #map,
+    gmp-map {
+        width: 95%;
+        height: 300px;
+    }
+
+    .infraestrutura-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+p { 
+    font-size: 20px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.infraestrutura-container {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.infraestrutura-texto {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px; /* Espaço entre o texto e a imagem */
+}
+
+.infraestrutura-logo {
+    margin-top: 10px;
+    text-align: center; /* Centraliza a logo */
+}
+
+.logofinal {
+    width: 200px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgb(3,22, 54);
+}
+
+.logofinal img {
+
+    width: 200px;
+
+}
+.destino {
+    margin-top: 15px;
+    width: 250px; /* Largura ajustada para um visual mais equilibrado */
+    padding: 15px;
+    font-size: 16px; /* Tamanho da fonte mais discreto */
+    background: rgba(3,22,54); /* Fundo sutil para destaque */
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#destino-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #4f4fe0;
+    background: #f4f4f4; /* Leve destaque no fundo */
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#destino-select:focus {
+    background: rgb(3,22,54);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.destino label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+
+}
+
+#ir-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: rgb(248, 244, 244);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#ir-button:hover {
+    background-color: #0056b3;
+}
+
