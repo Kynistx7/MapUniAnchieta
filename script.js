@@ -63,3 +63,26 @@ document.getElementById('ir-button').addEventListener('click', function() {
             alert('Destino não encontrado.');
     }
 });
+
+// Exibir nome do usuário logado
+document.addEventListener('DOMContentLoaded', function() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.nome) {
+        const welcomeMessage = document.createElement('div');
+        welcomeMessage.textContent = `Bem-vindo, ${user.nome}!`;
+
+        // Adicione a mensagem em um elemento existente ou crie um novo
+        const welcomeContainer = document.getElementById('welcome-container') || document.createElement('div');
+        welcomeContainer.id = 'welcome-container';
+        welcomeContainer.appendChild(welcomeMessage);
+
+        // Adiciona o container ao topo do body
+        document.body.prepend(welcomeContainer);
+
+        // Estilize a mensagem (opcional)
+        welcomeContainer.style.backgroundColor = '#f0f0f0';
+        welcomeContainer.style.padding = '10px';
+        welcomeContainer.style.textAlign = 'center';
+        welcomeContainer.style.fontSize = '1.2em';
+    }
+});

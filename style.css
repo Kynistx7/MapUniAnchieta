@@ -8,7 +8,7 @@
 
 html, body {
     height: 100%;
-    background-color: rgb(3,22,54);
+    background-color: rgb(3, 22, 54);
     color: #f0f0f4;
     text-align: center;
 }
@@ -71,7 +71,7 @@ h3 {
     background-color: rgb(5, 35, 80);
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .course img {
@@ -99,7 +99,7 @@ h3 {
 
 /* Google Maps */
 gmp-map {
-    width: 100%;  /* Mantido 100% para ocupar toda a largura */
+    width: 100%; /* Mantido 100% para ocupar toda a largura */
     height: 600px; /* Aumentado o tamanho do mapa */
     margin: 20px auto;
 }
@@ -133,7 +133,7 @@ gmp-map {
     width: 250px;
     padding: 15px;
     font-size: 16px;
-    background: rgba(3,22,54);
+    background: rgba(3, 22, 54);
     border-radius: 8px;
     display: block;
     margin-bottom: 5px;
@@ -153,7 +153,7 @@ gmp-map {
 }
 
 #destino-select:focus {
-    background: rgb(3,22,54);
+    background: rgb(3, 22, 54);
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -199,8 +199,8 @@ gmp-map {
     #street-view-container,
     #map,
     gmp-map {
-        width: 300%;  /* Alterado para 100% da largura */
-        height: 500px;  /* Diminuiu um pouco a altura para responsividade */
+        width: 100%; /* Garante que os mapas ocupem toda a largura */
+        height: 500px; /* Mantém ou ajusta a altura conforme necessário */
     }
 
     .infraestrutura-container {

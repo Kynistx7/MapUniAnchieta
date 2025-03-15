@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniAnchieta</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Link para o Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Script do Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Google Maps com marcador -->
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A7eq27yiiNkJf87NQDnf5N9lEs5mb3M&callback=console.debug&libraries=maps,marker&v=beta"></script>
 </head>
 <body>
     <header>
         <img src="templetes/Grupo-Anchieta-01 (2).png" alt="UniAnchieta logo" width="250">
         <nav>
-            <a href="https://kynistx7.github.io/LoginUni/">Entrar</a>
+            <a href="https://kynistx7.github.io/LoginUni/" id="login-link">Entrar</a>
             <a href="https://kynistx7.github.io/LoginUni/cadastro.html" class="bntentrar">Registrar</a>
             <a href="https://anchieta.br/" class="bntacssite">Meu perfil</a>
         </nav>
@@ -32,19 +29,16 @@
         <div class="course"><img src="templetes/Imagem5-1-1024x575.webp" alt="Ciência"><p>Ciência</p></div>
     </div>
 
-    <!-- Google Maps com marcador -->
     <h3>Mapa com Marcador</h3>
     <gmp-map center="-23.214570999145508,-46.8909797668457" zoom="14" map-id="DEMO_MAP_ID" style="width: 60%; height: 400px;">
         <gmp-advanced-marker position="-23.214570999145508,-46.8909797668457" title="Localização UniAnchieta"></gmp-advanced-marker>
     </gmp-map>
 
-    <!-- Mapa Leaflet -->
     <h3>Mapa Interativo</h3>
     <div id="map" style="width: 50%; height: 400px; margin: 20px auto; border: 1px solid #f1ecec;"></div>
 
     <div class="infraestrutura-container">
         <div class="infraestrutura-imagem">
-            <!-- Imagem aqui -->
         </div>
 
         <div class="destino">
@@ -70,16 +64,52 @@
     </div>
 
     <script>
-        // Inicializa o mapa Leaflet
-        var map = L.map('map').setView([-23.214571, -46.890980], 17); 
+        document.addEventListener("DOMContentLoaded", function() {
+            var nomeUsuario = localStorage.getItem("nomeUsuario");
 
-        // Adiciona camada OpenStreetMap
+            if (nomeUsuario) {
+                var header = document.querySelector("header");
+
+                var welcomeMessage = document.createElement("p");
+                welcomeMessage.textContent = "Seja bem-vindo, " + nomeUsuario + "!";
+                welcomeMessage.style.fontSize = "18px";
+                welcomeMessage.style.fontWeight = "bold";
+                welcomeMessage.style.color = "#fff";
+                welcomeMessage.style.marginLeft = "20px";
+                header.appendChild(welcomeMessage);
+
+                var loginLink = document.getElementById('login-link');
+                if (loginLink) {
+                    loginLink.style.display = "none";
+                }
+
+                var logoutBtn = document.createElement("button");
+                logoutBtn.textContent = "Sair";
+                logoutBtn.style.marginLeft = "15px";
+                logoutBtn.style.padding = "5px 10px";
+                logoutBtn.style.backgroundColor = "#ff4d4d";
+                logoutBtn.style.color = "#fff";
+                logoutBtn.style.border = "none";
+                logoutBtn.style.borderRadius = "5px";
+                logoutBtn.style.cursor = "pointer";
+
+                logoutBtn.addEventListener("click", function() {
+                    localStorage.removeItem("nomeUsuario");
+                    localStorage.removeItem("user");
+                    location.reload();
+                });
+
+                header.appendChild(logoutBtn);
+            }
+        });
+
+        var map = L.map('map').setView([-23.214571, -46.890980], 17);
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        // Adiciona os marcadores para os prédios
         var markers = {
             marker1: L.marker([-23.214596, -46.891565]).addTo(map).bindPopup("<b>Prédio 1</b>"),
             marker2: L.marker([-23.21294, -46.892864]).addTo(map).bindPopup("<b>Prédio 2</b>"),
@@ -90,51 +120,12 @@
             marker7: L.marker([-23.213245, -46.894333]).addTo(map).bindPopup("<b>Cantina</b>")
         };
 
-        // Função para redirecionar o mapa para o local do prédio
-        function goToLocation(lat, lng, popupContent) {
-            map.setView([lat, lng], 17);
-            L.popup()
-                .setLatLng([lat, lng])
-                .setContent(popupContent)
-                .openOn(map);
-        }
-
-        // Adiciona evento de clique ao botão "Ir"
         document.getElementById('ir-button').addEventListener('click', function() {
             var destino = document.getElementById('destino-select').value;
-            switch (destino) {
-                case 'marker1':
-                    goToLocation(-23.214596, -46.891565, "<b>Prédio 1</b>");
-                    break;
-                case 'marker2':
-                    goToLocation(-23.21294, -46.892864, "<b>Prédio 2</b>");
-                    break;
-                case 'marker3':
-                    goToLocation(-23.214054, -46.892928, "<b>Prédio 3</b>");
-                    break;
-                case 'marker4':
-                    goToLocation(-23.214714, -46.893421, "<b>Prédio 4</b>");
-                    break;
-                case 'marker5':
-                    goToLocation(-23.215375, -46.891105, "<b>AnfiTeatro</b>");
-                    break;
-                case 'marker6':
-                    goToLocation(-23.213936, -46.891962, "<b>Área Food Truck</b>");
-                    break;
-                case 'marker7':
-                    goToLocation(-23.213245, -46.894333, "<b>Cantina</b>");
-                    break;
-                default:
-                    alert("Selecione um destino válido.");
+            if (markers[destino]) {
+                map.setView(markers[destino].getLatLng(), 17);
+                markers[destino].openPopup();
             }
-        });
-
-        // Adiciona evento de clique para mostrar coordenadas
-        map.on('click', function(e) {
-            L.popup()
-                .setLatLng(e.latlng)
-                .setContent("Você clicou aqui: " + e.latlng.toString())
-                .openOn(map);
         });
     </script>
 </body>
