@@ -41,7 +41,7 @@ nav a {
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 5px;
-    color: white;
+    color: rgb(253, 251, 251);
     transition: background-color 0.3s;
 }
 
@@ -54,6 +54,8 @@ h3 {
     margin: 30px 0 15px;
     font-size: 1.5rem;
     color: white;
+    font-family: 'Times New Roman', Times, serif;
+
 }
 
 /* Cursos */
@@ -82,8 +84,10 @@ h3 {
 }
 
 .course p {
+    color: white;
     margin-top: 8px;
     font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Mapas e Street View */
@@ -123,8 +127,10 @@ gmp-map {
 .infraestrutura-texto {
     max-width: 600px;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.8;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 /* Destino */
