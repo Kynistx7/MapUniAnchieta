@@ -58,6 +58,12 @@ h3 {
 
 }
 
+h5 {
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
 /* Cursos */
 .courses {
     display: flex;
@@ -103,9 +109,9 @@ h3 {
 
 /* Google Maps */
 gmp-map {
-    width: 100%; /* Mantido 100% para ocupar toda a largura */
-    height: 600px; /* Aumentado o tamanho do mapa */
-    margin: 20px auto;
+    width: 150%; /* Mantido 100% para ocupar toda a largura */
+    height: 800px; /* Aumentado o tamanho do mapa */
+    margin: 70px auto;
 }
 
 /* Infraestrutura */
