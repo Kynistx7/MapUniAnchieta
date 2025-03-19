@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniAnchieta</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A7eq27yiiNkJf87NQDnf5N9lEs5mb3M&callback=console.debug&libraries=maps,marker&v=beta"></script>
@@ -15,134 +15,89 @@
         <nav>
             <a href="https://kynistx7.github.io/LoginUni/" id="login-link">Entrar</a>
             <a href="https://kynistx7.github.io/LoginUni/cadastro.html" class="bntentrar">Registrar</a>
-            <a href="https://anchieta.br/" class="bntacssite">Meu perfil</a>
+            <a href="https://anchieta.br/" class="bntacssite">Matricule-se</a>
         </nav>
-        
     </header>
-
+    <div class="main-container">
+        <div class="text-section">
+            <h2>SEJA BEM VINDO AO MAPA UNIANCHIETA!</h2><br>
+            <p>Pensando em você, nosso aluno, criamos este mapa interativo para tornar sua localização dentro do nosso campus mais fácil e intuitiva!  
+                <br> Clique em uma das disciplinas abaixo e descubra em qual prédio suas aulas acontecem.</p>
+        </div>
+    
+        <div class="info-container">
+            <div class="info-box">
+                <img src="templetes/ferramenta-de-chapeu-preto-de-graduacao-de-estudante-universitario-para-cabeca.png" alt="Ícone Tradição" class="info-icon">
+                <p class="info-text">Mais de 80 Anos de Tradição</p>
+            </div>
+            <div class="info-box">
+                <img src="templetes/estrela-de-natal.png" alt="Ícone Qualidade" class="info-icon">
+                <p class="info-text">Qualidade de Ensino</p>
+            </div>
+            <div class="info-box">
+                <img src="templetes/escrita.png" alt="Ícone MEC" class="info-icon">
+                <p class="info-text">Nota máxima no MEC</p>
+            </div>
+            <div class="info-box">
+                <img src="templetes/predio-comercial.png" alt="Ícone Infraestrutura" class="info-icon">
+                <p class="info-text">Infraestrutura de Ponta</p>
+            </div>
+        </div>
+    </div>
     <br>
-
-    <h3 id="titulo">ALGUNS DE NOSSOS CURSOS</h3>
-    <h5>Descubra Abaixo</h5>
-    <div class="courses">
-        <a href="https://anchieta.br/lp/graduacao-direito/" class="course">
-            <img src="templetes/banner-curso-direito-hibrido-e1687821626906.webp" alt="Direito">
-            <p>Direito</p>
-        </a>
-        <a href="https://anchieta.br/presencial/nutricao/"" class="course">
-            <img src="templetes/banner-graduacao-nutricao-presencial.webp" alt="Banco de dados">
-            <p>Nutrição</p>
-        </a>
-        <a href="https://anchieta.br/presencial/analise-e-desenvolvimento-de-sistemas_2/" class="course">
-            <img src="templetes/banner-graduacao-ead-analise-e-desenvolvimento-de-sistemas (1).webp" alt="Ads">
-            <p>Analise e Desenvolvimento de Sistemas</p>
-        </a>
-        <a href="https://anchieta.br/presencial/ciencia-da-computacao/" class="course">
-            <img src="templetes/cienciacomp.webp" alt="Ciência">
-            <p>Ciência da Computação</p>
-        </a>
     </div>
-        
-    </div>
-
-    <h3>Mapa com Marcador</h3>
-    <gmp-map center="-23.214570999145508,-46.8909797668457" zoom="14" map-id="DEMO_MAP_ID" style="width: 95%; height: 350px; margin: 20px auto ; border: 1px solid ;">
-        <gmp-advanced-marker position="-23.214570999145508,-46.8909797668457" title="Localização UniAnchieta"></gmp-advanced-marker>
-    </gmp-map>
-
-    <h3>Mapa Interativo</h3>
-    <div id="map" style="width: 95%; height: 350px; margin: 20px auto; border: 1px solid #fdfafa;"></div>
-
-    <div class="infraestrutura-container">
-        <div class="infraestrutura-imagem">
+    <div class="cards-container">
+        <div class="card" data-marker="marker1" onclick="irParaMapa('marker1')">
+            <br>
+            <div class="card-image-container">
+                <img src="templetes/banner-curso-direito-hibrido-e1687821626906.webp" alt="Descrição da imagem" class="card-image">
+            </div>
+            <p class="card-title">Direito</p>
+            <p class="card-des">
+                Explore as diversas áreas do Direito e amplie suas perspectivas profissionais.
+            </p>
         </div>
-
-        <div class="destino">
-            <label for="destino-select">Escolha um destino:</label>
-            <br><br>
-            <select id="destino-select">
-                <option value="marker1">Prédio 1</option>
-                <option value="marker2">Prédio 2</option>
-                <option value="marker3">Prédio 3</option>
-                <option value="marker4">Prédio 4</option>
-                <option value="marker5">AnfiTeatro</option>
-                <option value="marker6">Área Food Truck</option>
-                <option value="marker7">Cantina</option>
-            </select>
-            <button id="ir-button">Ir</button>
+        <div class="card">
+            <div class="card-image-container" data-marker="marker2" onclick="irParaMapa('marker2')">
+                <img src="templetes/banner-graduacao-nutricao-presencial.webp" alt="Descrição da Imagem" class="card-image">
+            </div>
+            <p class="card-title">Nutrição</p>
+            <p class="card-des">
+                Descubra os segredos de uma vida saudável com nosso curso de nutrição.
+            </p>
         </div>
-
-        <div class="infraestrutura-texto">
-            <p>
-                O UniAnchieta oferece uma infraestrutura moderna e completa, com salas de aula equipadas, laboratórios especializados para diversas áreas, biblioteca atualizada com acervo físico e digital, além de espaços de convivência e áreas esportivas. O campus conta com estacionamento amplo, acessibilidade e recursos tecnológicos que garantem um ambiente de aprendizado confortável e inovador, atendendo às necessidades acadêmicas e práticas dos alunos.
+        <div class="card">
+            <div class="card-image-container" data-marker="marker3" onclick="irParaMapa('marker3')">
+                <img src="templetes/fullstack.webp" alt="Descrição da Imagem" class="card-image">
+            </div>
+            <p class="card-title">Engenharia de Softawere</p>
+            <p class="card-des">
+                Domine a tecnologia e construa o futuro com nosso curso de Engenharia de Softawere.
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-image-container" data-marker="marker4" onclick="irParaMapa('marker4')">
+                <img src="templetes/Imagem1.webp" alt="Descrição da Imagem" class="card-image">
+            </div>
+            <p class="card-title">Banco de dados</p>
+            <p class="card-des">
+                Domine a tecnologia e construa o futuro com nosso curso de Banco de Dados.
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-image-container" data-marker="marker5" onclick="irParaMapa('marker5')">
+                <img src="templetes/cienciacomp.webp" alt="Descrição da Imagem" class="card-image">
+            </div>
+            <p class="card-title">Ciencia da Computação</p>
+            <p class="card-des">
+                Nosso curso de Ciencia da Computação oferece uma formação completa para os nossos alunos.
             </p>
         </div>
     </div>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var nomeUsuario = localStorage.getItem("nomeUsuario");
-
-            if (nomeUsuario) {
-                var header = document.querySelector("header");
-
-                var welcomeMessage = document.createElement("p");
-                welcomeMessage.textContent = "Seja bem-vindo, " + nomeUsuario + "!";
-                welcomeMessage.style.fontSize = "18px";
-                welcomeMessage.style.fontWeight = "bold";
-                welcomeMessage.style.color = "#fff";
-                welcomeMessage.style.marginLeft = "20px";
-                header.appendChild(welcomeMessage);
-
-                var loginLink = document.getElementById('login-link');
-                if (loginLink) {
-                    loginLink.style.display = "none";
-                }
-
-                var logoutBtn = document.createElement("button");
-                logoutBtn.textContent = "Sair";
-                logoutBtn.style.marginLeft = "15px";
-                logoutBtn.style.padding = "5px 10px";
-                logoutBtn.style.backgroundColor = "#ff4d4d";
-                logoutBtn.style.color = "#fff";
-                logoutBtn.style.border = "none";
-                logoutBtn.style.borderRadius = "5px";
-                logoutBtn.style.cursor = "pointer";
-
-                logoutBtn.addEventListener("click", function() {
-                    localStorage.removeItem("nomeUsuario");
-                    localStorage.removeItem("user");
-                    location.reload();
-                });
-
-                header.appendChild(logoutBtn);
-            }
-        });
-
-        var map = L.map('map').setView([-23.214571, -46.890980], 17);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-        var markers = {
-            marker1: L.marker([-23.214596, -46.891565]).addTo(map).bindPopup("<b>Prédio 1</b>"),
-            marker2: L.marker([-23.21294, -46.892864]).addTo(map).bindPopup("<b>Prédio 2</b>"),
-            marker3: L.marker([-23.214054, -46.892928]).addTo(map).bindPopup("<b>Prédio 3</b>"),
-            marker4: L.marker([-23.214714, -46.893421]).addTo(map).bindPopup("<b>Prédio 4</b>"),
-            marker5: L.marker([-23.215375, -46.891105]).addTo(map).bindPopup("<b>AnfiTeatro</b>"),
-            marker6: L.marker([-23.213936, -46.891962]).addTo(map).bindPopup("<b>Área Food Truck</b>"),
-            marker7: L.marker([-23.213245, -46.894333]).addTo(map).bindPopup("<b>Cantina</b>")
-        };
-
-        document.getElementById('ir-button').addEventListener('click', function() {
-            var destino = document.getElementById('destino-select').value;
-            if (markers[destino]) {
-                map.setView(markers[destino].getLatLng(), 17);
-                markers[destino].openPopup();
-            }
-        });
+        function irParaMapa(destino) {
+            window.location.href = `mapa.html?destino=${destino}`;
+        }
     </script>
 </body>
 </html>

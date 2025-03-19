@@ -8,14 +8,15 @@
 
 html, body {
     height: 100%;
-    background-color: rgb(3, 22, 54);
-    color: #f0f0f4;
+    background-color: #f0f0f4;
+    color: #333; /* Alterado para melhorar a legibilidade */
     text-align: center;
 }
 
 /* Cabeçalho */
 header {
     padding: 20px 0;
+    background-color: rgb(5,22, 54);
     border-bottom: 2px solid #f0f0f4;
     display: flex;
     justify-content: space-between;
@@ -31,76 +32,11 @@ header img.logo-uni {
     opacity: 0.9;
 }
 
-nav {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    color: rgb(253, 251, 251);
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: rgba(55, 7, 231, 0.811);
-}
-
-/* Títulos */
-h3 {
-    margin: 30px 0 15px;
-    font-size: 1.5rem;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-
-}
-
-h5 {
-
-    font-family: 'Times New Roman', Times, serif;
-    font-size: medium;
-}
-
-/* Cursos */
-.courses {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 40px 0;
-}
-
-.course {
-    width: 180px;
-    text-align: center;
-    background-color: rgb(5, 35, 80);
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.course img {
-    width: 100%;
-    border-radius: 5px;
-    height: 100px;
-    object-fit: cover;
-}
-
-.course p {
-    color: white;
-    margin-top: 8px;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
 /* Mapas e Street View */
 #street-view-container,
 #map {
     width: 100%;
-    height: 600px; /* Aumentado o tamanho do mapa */
+    height: 600px;
     margin: 20px auto;
     border: 1px solid #f1ecec;
     border-radius: 8px;
@@ -109,8 +45,8 @@ h5 {
 
 /* Google Maps */
 gmp-map {
-    width: 150%; /* Mantido 100% para ocupar toda a largura */
-    height: 800px; /* Aumentado o tamanho do mapa */
+    width: 150%;
+    height: 800px;
     margin: 70px auto;
 }
 
@@ -136,7 +72,7 @@ gmp-map {
     line-height: 1.8;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 /* Destino */
@@ -192,31 +128,37 @@ gmp-map {
 }
 
 /* Responsividade */
-@media (max-width: 758px) {
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    nav {
-        margin-top: 10px;
-        justify-content: center;
-    }
-
-    .courses {
-        gap: 15px;
-    }
-
     #street-view-container,
     #map,
     gmp-map {
-        width: 100%; /* Garante que os mapas ocupem toda a largura */
-        height: 500px; /* Mantém ou ajusta a altura conforme necessário */
+        width: 100%;
+        height: 500px;
     }
 
     .infraestrutura-container {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .infraestrutura-imagem img {
+        max-width: 100%;
+    }
+
+    .infraestrutura-texto {
+        max-width: 100%;
+        font-size: 12px;
+    }
+
+    .destino {
+        width: 100%;
     }
 }

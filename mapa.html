@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniAnchieta</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A7eq27yiiNkJf87NQDnf5N9lEs5mb3M&callback=console.debug&libraries=maps,marker&v=beta"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img src="templetes/Grupo-Anchieta-01 (2).png" alt="UniAnchieta logo" width="250">
+        </a>
+    </header>
+    <br>
+    <h3>Mapa com Marcador</h3>
+    <div id="map" style="width: 80%; height: 350px; margin: 20px auto; border: 1px solid #fdfafa;"></div>
+    <br>
+    
+
+    <gmp-map center="-23.214570999145508,-46.8909797668457" zoom="14" map-id="DEMO_MAP_ID" style="width: 80%; height: 350px; margin: 20px auto ; border: 1px solid ;">
+        <gmp-advanced-marker position="-23.214570999145508,-46.8909797668457" title="Localização UniAnchieta"></gmp-advanced-marker>
+    </gmp-map>
+
+
+    <script>// Função para obter parâmetros da URL
+        function getParametroURL(nome) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nome);
+        }
+        
+        // Inicializa o mapa Leaflet
+        var map = L.map('map').setView([-23.214571, -46.890980], 17);
+        
+        // Adiciona camada OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        
+        // Definição dos locais no mapa
+        var locais = {
+            marker1: { lat: -23.214596, lng: -46.891565, name: "Prédio 1", },
+            marker2: { lat: -23.21294, lng: -46.892864, name: "Prédio 2" },
+            marker3: { lat: -23.214054, lng: -46.892928, name: "Prédio 3" },
+            marker4: { lat: -23.214714, lng: -46.893421, name: "Prédio 4" },
+            marker5: { lat: -23.213245, lng: -46.894333, name: "Cantina" },
+            marker6: { lat: -23.213936, lng: -46.891962, name: "Prédio Administrativo" },
+            marker7: { lat: -23.215375, lng: -46.891105, name: "AnfiTeatro" }
+        };
+        
+        // Adiciona os marcadores no mapa
+        for (let key in locais) {
+            L.marker([locais[key].lat, locais[key].lng])
+                .addTo(map)
+                .bindPopup(`<b>${locais[key].name}</b>`);
+        }
+        
+        // Verifica se a URL tem um destino
+        var destino = getParametroURL('destino');
+        if (destino && locais[destino]) {
+            // Move o mapa para o local correspondente
+            map.setView([locais[destino].lat, locais[destino].lng], 17);
+            L.popup()
+                .setLatLng([locais[destino].lat, locais[destino].lng])
+                .setContent(`<b>${locais[destino].name}</b>`)
+                .openOn(map);
+        }
+        </script>
+
+</body>
+</html>
