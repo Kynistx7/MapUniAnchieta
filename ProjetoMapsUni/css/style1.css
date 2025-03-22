@@ -1,8 +1,4 @@
-/* Importando outros arquivos CSS */
-@import url('home.css');
-@import url('contact.css');
-@import url('login.css');
-@import url('register.css');
+
 
 /* Reset básico e estilos globais */
 * {
