@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo</title>
+    <link rel="stylesheet" href="ProjetoMapsUni/css/style1.css">
+</head>
+<body>
+    <div class="info-container">
+        <div class="info-box">
+            <img src="ProjetoMapsUni/templetes/ferramenta-de-chapeu-preto-de-graduacao-de-estudante-universitario-para-cabeca.png" alt="Ícone Tradição" class="info-icon">
+            <p class="info-text">Mais de 80 Anos de Tradição</p>
+        </div>
+        <div class="info-box">
+            <img src="ProjetoMapsUni/templetes/estrela-de-natal.png" alt="Ícone Qualidade" class="info-icon">
+            <p class="info-text">Qualidade de Ensino</p>
+        </div>
+        <div class="info-box">
+            <img src="ProjetoMapsUni/templetes/escrita.png" alt="Ícone MEC" class="info-icon">
+            <p class="info-text">Nota máxima no MEC</p>
+        </div>
+        <div class="info-box">
+            <img src="ProjetoMapsUni/templetes/predio-comercial.png" alt="Ícone Infraestrutura" class="info-icon">
+            <p class="info-text">Infraestrutura de Ponta</p>
+        </div>
+    </div>
+</section>
+
+<section class="courses">
+    <div class="cards-container">
+        <article class="card" data-marker="marker1" onclick="irParaMapa('marker1')">
+            <div class="card-image-container">
+                <img src="ProjetoMapsUni/templetes/banner-curso-direito-hibrido-e1687821626906.webp" alt="Curso de Direito" class="card-image">
+            </div>
+            <h3 class="card-title">Direito</h3>
+            <p class="card-des">Explore as diversas áreas do Direito e amplie suas perspectivas profissionais.</p>
+        </article>
+        <article class="card" data-marker="marker2" onclick="irParaMapa('marker2')">
+            <div class="card-image-container">
+                <img src="ProjetoMapsUni/templetes/banner-graduacao-nutricao-presencial.webp" alt="Curso de Nutrição" class="card-image">
+            </div>
+            <h3 class="card-title">Nutrição</h3>
+            <p class="card-des">Descubra os segredos de uma vida saudável com nosso curso de Nutrição.</p>
+        </article>
+        <article class="card" data-marker="marker3" onclick="irParaMapa('marker3')">
+            <div class="card-image-container">
+                <img src="ProjetoMapsUni/templetes/fullstack.webp" alt="Curso de Engenharia de Software" class="card-image">
+            </div>
+            <h3 class="card-title">Engenharia de Software</h3>
+            <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Engenharia de Software.</p>
+        </article>
+        <article class="card" data-marker="marker4" onclick="irParaMapa('marker4')">
+            <div class="card-image-container">
+                <img src="ProjetoMapsUni/templetes/Imagem1.webp" alt="Curso de Banco de Dados" class="card-image">
+            </div>
+            <h3 class="card-title">Banco de Dados</h3>
+            <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Banco de Dados.</p>
+        </article>
+    </div>
+</section>
+</main>
+
+<script>
+function irParaMapa(destino) {
+    window.location.href = `mapa.html?destino=${destino}`;
+}
+
+function navigateTo(event, url) {
+    event.preventDefault();
+    window.location.href = url;
+}
+</script>
+    
+</body>
+</html>

@@ -10,14 +10,15 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A7eq27yiiNkJf87NQDnf5N9lEs5mb3M&callback=console.debug&libraries=maps,marker&v=beta"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="ProjetoMapsUni/templetes/Grupo-Anchieta-01 (2).png" alt="UniAnchieta logo" class="logo" width="200px">
+        <img src="ProjetoMapsUni/templetes/Grupo-Anchieta-01 (2).png" alt="UniAnchieta logo" class="logod" width="200px">
         <nav aria-label="Navegação Principal">
             <a href="https://kynistx7.github.io/LoginUni/" id="login-link">Home</a>
-            <a href="https://kynistx7.github.io/LoginUni/cadastro.html" class="bntentrar">FAQ</a>
+            <a href="faq.html" class="bntentrar">FAQ</a>
             <a href="https://anchieta.br/" class="bntacssite">Contato</a>
         </nav>
     </header>
@@ -26,15 +27,15 @@
         <section class="hero">
             <div class="left">
                 <br>
-                <h1>Olá Estudante</h1>
+                <h1>Olá <span>Estudante</span></h1>
                 <br>
                 <h2>Seja bem vindo ao UniMaps <br>O seu guia do campus</h2>
                 <br>
                 <p>UniMaps ajuda os estudantes da Unianchieta a encontrar facilmente suas salas de aula. Basta inserir seu curso e disciplina, e o aplicativo mostrará o prédio, andar e sala da sua aula. Simples, rápido e eficiente!</p>
                 <br>
                 <div class="buttons">
-                    <a href="login.html" class="btn login" onclick="navigateTo(event, 'login.html')">Login</a>
-                    <a href="register.html" class="btn register">Register</a>
+                    <a href="https://kynistx7.github.io/LoginUni/" class="btn login">Login</a>
+                    <a href="https://kynistx7.github.io/LoginUni/cadastro.html" class="btn register">Registrar</a>
                 </div>
             </div>
             <div class="right">
@@ -43,70 +44,5 @@
                 </div>
             </div>
         </section>
-
-            <div class="info-container">
-                <div class="info-box">
-                    <img src="ProjetoMapsUni/templetes/ferramenta-de-chapeu-preto-de-graduacao-de-estudante-universitario-para-cabeca.png" alt="Ícone Tradição" class="info-icon">
-                    <p class="info-text">Mais de 80 Anos de Tradição</p>
-                </div>
-                <div class="info-box">
-                    <img src="ProjetoMapsUni/templetes/estrela-de-natal.png" alt="Ícone Qualidade" class="info-icon">
-                    <p class="info-text">Qualidade de Ensino</p>
-                </div>
-                <div class="info-box">
-                    <img src="ProjetoMapsUni/templetes/escrita.png" alt="Ícone MEC" class="info-icon">
-                    <p class="info-text">Nota máxima no MEC</p>
-                </div>
-                <div class="info-box">
-                    <img src="ProjetoMapsUni/templetes/predio-comercial.png" alt="Ícone Infraestrutura" class="info-icon">
-                    <p class="info-text">Infraestrutura de Ponta</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="courses">
-            <div class="cards-container">
-                <article class="card" data-marker="marker1" onclick="irParaMapa('marker1')">
-                    <div class="card-image-container">
-                        <img src="ProjetoMapsUni/templetes/banner-curso-direito-hibrido-e1687821626906.webp" alt="Curso de Direito" class="card-image">
-                    </div>
-                    <h3 class="card-title">Direito</h3>
-                    <p class="card-des">Explore as diversas áreas do Direito e amplie suas perspectivas profissionais.</p>
-                </article>
-                <article class="card" data-marker="marker2" onclick="irParaMapa('marker2')">
-                    <div class="card-image-container">
-                        <img src="ProjetoMapsUni/templetes/banner-graduacao-nutricao-presencial.webp" alt="Curso de Nutrição" class="card-image">
-                    </div>
-                    <h3 class="card-title">Nutrição</h3>
-                    <p class="card-des">Descubra os segredos de uma vida saudável com nosso curso de Nutrição.</p>
-                </article>
-                <article class="card" data-marker="marker3" onclick="irParaMapa('marker3')">
-                    <div class="card-image-container">
-                        <img src="ProjetoMapsUni/templetes/fullstack.webp" alt="Curso de Engenharia de Software" class="card-image">
-                    </div>
-                    <h3 class="card-title">Engenharia de Software</h3>
-                    <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Engenharia de Software.</p>
-                </article>
-                <article class="card" data-marker="marker4" onclick="irParaMapa('marker4')">
-                    <div class="card-image-container">
-                        <img src="ProjetoMapsUni/templetes/Imagem1.webp" alt="Curso de Banco de Dados" class="card-image">
-                    </div>
-                    <h3 class="card-title">Banco de Dados</h3>
-                    <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Banco de Dados.</p>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        function irParaMapa(destino) {
-            window.location.href = `mapa.html?destino=${destino}`;
-        }
-
-        function navigateTo(event, url) {
-            event.preventDefault();
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
