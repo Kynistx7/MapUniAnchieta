@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seja bem vindo</title>
+    <title>Seja bem-vindo</title>
     <link rel="stylesheet" href="ProjetoMapsUni/css/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <img src="ProjetoMapsUni/templetes/Grupo-Anchieta-01 (2).png" alt="UniAnchieta logo" class="logod" width="200px">
+        <nav aria-label="Navegação Principal">
+            <a href="index.html" id="login-link">Home</a>
+            <a href="faq.html" class="bntentrar">FAQ</a>
+            <a href="https://anchieta.br/" class="bntacssite">Contato</a>
+        </nav>
+    </header>
+    <br><br>
+    <section>
+        <div class="info-text">
+            <h1>NOSSOS <span>CURSOS.</span></h1>
+        </div>
+    </section>
+    <br> 
     <div class="info-container">
         <div class="info-box">
             <img src="ProjetoMapsUni/templetes/ferramenta-de-chapeu-preto-de-graduacao-de-estudante-universitario-para-cabeca.png" alt="Ícone Tradição" class="info-icon">
@@ -25,52 +41,88 @@
             <p class="info-text">Infraestrutura de Ponta</p>
         </div>
     </div>
-</section>
 
-<section class="courses">
-    <div class="cards-container">
-        <article class="card" data-marker="marker1" onclick="irParaMapa('marker1')">
-            <div class="card-image-container">
-                <img src="ProjetoMapsUni/templetes/banner-curso-direito-hibrido-e1687821626906.webp" alt="Curso de Direito" class="card-image">
-            </div>
-            <h3 class="card-title">Direito</h3>
-            <p class="card-des">Explore as diversas áreas do Direito e amplie suas perspectivas profissionais.</p>
-        </article>
-        <article class="card" data-marker="marker2" onclick="irParaMapa('marker2')">
-            <div class="card-image-container">
-                <img src="ProjetoMapsUni/templetes/banner-graduacao-nutricao-presencial.webp" alt="Curso de Nutrição" class="card-image">
-            </div>
-            <h3 class="card-title">Nutrição</h3>
-            <p class="card-des">Descubra os segredos de uma vida saudável com nosso curso de Nutrição.</p>
-        </article>
-        <article class="card" data-marker="marker3" onclick="irParaMapa('marker3')">
-            <div class="card-image-container">
-                <img src="ProjetoMapsUni/templetes/fullstack.webp" alt="Curso de Engenharia de Software" class="card-image">
-            </div>
-            <h3 class="card-title">Engenharia de Software</h3>
-            <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Engenharia de Software.</p>
-        </article>
-        <article class="card" data-marker="marker4" onclick="irParaMapa('marker4')">
-            <div class="card-image-container">
-                <img src="ProjetoMapsUni/templetes/Imagem1.webp" alt="Curso de Banco de Dados" class="card-image">
-            </div>
-            <h3 class="card-title">Banco de Dados</h3>
-            <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Banco de Dados.</p>
-        </article>
+    <div class="info-tex">
+        <p>Clique no seu curso abaixo e será rederecionado para o predio de sua disciplina</p>
     </div>
-</section>
-</main>
 
-<script>
-function irParaMapa(destino) {
-    window.location.href = `mapa.html?destino=${destino}`;
-}
+    <section id="cursos" class="courses">
+        <div class="cards-container">
+            <article class="card" data-marker="marker1" onclick="irParaMapa('marker1')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/banner-curso-direito-hibrido-e1687821626906.webp" alt="Curso de Direito" class="card-image">
+                </div>
+                <h3 class="card-title">Direito</h3>
+                <p class="card-des">Explore as diversas áreas do Direito e amplie suas perspectivas profissionais.</p>
+            </article>
+            <article class="card" data-marker="marker2" onclick="irParaMapa('marker2')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/banner-graduacao-nutricao-presencial.webp" alt="Curso de Nutrição" class="card-image">
+                </div>
+                <h3 class="card-title">Nutrição</h3>
+                <p class="card-des">Descubra os segredos de uma vida saudável com nosso curso de Nutrição.</p>
+            </article>
+            <article class="card" data-marker="marker3" onclick="irParaMapa('marker3')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/fullstack.webp" alt="Curso de Engenharia de Software" class="card-image">
+                </div>
+                <h3 class="card-title">Engenharia de Software</h3>
+                <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Engenharia de Software.</p>
+            </article>
+            <article class="card" data-marker="marker4" onclick="irParaMapa('marker4')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/Imagem1.webp" alt="Curso de Banco de Dados" class="card-image">
+                </div>
+                <h3 class="card-title">Banco de Dados</h3>
+                <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Banco de Dados.</p>
+            </article>
+        </div>
+        <div class="cards-container">
+            <article class="card" data-marker="marker1" onclick="irParaMapa('marker1')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/engenhariacivilhibrido.webp" alt="Curso de Engenharia" class="card-image">
+                </div>
+                <h3 class="card-title">Engenharia</h3>
+                <p class="card-des"></p>
+            </article>
+            <article class="card" data-marker="marker2" onclick="irParaMapa('marker2')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/healthcare-dentistry-medicine-male-doctor-dentist-2024-12-08-04-15-44-utc.webp" alt="Curso de Nutrição" class="card-image">
+                </div>
+                <h3 class="card-title">Ondontologia</h3>
+                <p class="card-des"></p>
+            </article>
+            <article class="card" data-marker="marker3" onclick="irParaMapa('marker3')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/banner-curso-hibrida-psicologia.webp" alt="Curso de Engenharia de Software" class="card-image">
+                </div>
+                <h3 class="card-title">Psicologia</h3>
+                <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Engenharia de Software.</p>
+            </article>
+            <article class="card" data-marker="marker4" onclick="irParaMapa('marker4')">
+                <div class="card-image-container">
+                    <img src="ProjetoMapsUni/templetes/banner-graduacao-administracao-1-1.jpg.webp" alt="Curso de Banco de Dados" class="card-image">
+                </div>
+                <h3 class="card-title">Administração</h3>
+                <p class="card-des">Domine a tecnologia e construa o futuro com nosso curso de Banco de Dados.</p>
+            </article>
+        </div>
+    </section>
 
-function navigateTo(event, url) {
-    event.preventDefault();
-    window.location.href = url;
-}
-</script>
-    
+    <footer id="contato">
+        <p>Entre em contato: contato@instituicao.com</p>
+        <p>&copy; 2023 Instituição de Ensino. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function irParaMapa(destino) {
+            window.location.href = `mapa.html?destino=${destino}`;
+        }
+
+        function navigateTo(event, url) {
+            event.preventDefault();
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>

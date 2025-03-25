@@ -3,14 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif; /* Adicionei aspas ao nome da fonte */
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
 
 html, body {
     height: 100%;
-    background-color: #121212;
-    color: #ffffff; /* Padronizei para hexadecimal completo */
+    background-color: #1e1e1e; /* Cor de fundo mais suave */
+    color: #e0e0e0; /* Cor de texto mais clara */
     font-size: 20px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -23,49 +23,46 @@ body.fade-out {
 /* Cabeçalho */
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 15px;
-    background-color: #000000; /* Padronizei para hexadecimal completo */
-    border-bottom: 2px solid #f0f0f4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #2c2c2c; /* Cor de fundo do cabeçalho */
+    border-bottom: 2px solid #3a3a3a; /* Cor da borda mais suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header .container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Adicionei um limite máximo para melhor controle */
+    max-width: 1200px;
 }
 
 header .logod {
     height: 50px;
-    margin-bottom: 10px;
+    margin-right: auto;
 }
 
 /* Menu de navegação */
 nav {
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px; /* Adicionei limite máximo */
-    padding: 10px 0; /* Adicionei padding para melhor espaçamento */
+    gap: 15px; /* Aumentei o espaço entre os itens */
+    justify-content: flex-end;
+    padding: 10px 0;
 }
 
 nav a {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 6px;
-    color: #ffffff; /* Padronizei cor */
+    color: #e0e0e0;
     font-weight: bold;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Adicionei transição suave */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 nav a:hover {
-    background-color: rgba(97, 11, 218, 0.811);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 123, 255, 0.8); /* Azul mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Hero Section */
@@ -74,10 +71,10 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px 15px; /* Adicionei padding lateral */
+    padding: 50px 15px;
     gap: 20px;
-    max-width: 1200px; /* Adicionei limite máximo */
-    margin: 0 auto; /* Centralização */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .left {
@@ -85,7 +82,7 @@ nav a:hover {
 }
 
 .left h1 span {
-    color: #007bff;
+    color: #007bff; /* Azul padrão */
 }
 
 .right {
@@ -97,7 +94,7 @@ nav a:hover {
 .image-container img {
     max-width: 100%;
     height: auto;
-    display: block; /* Remove espaço inferior indesejado */
+    display: block;
 }
 
 /* Container de Informações */
@@ -106,18 +103,17 @@ nav a:hover {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: center;
-    gap: 10px;
-    background-color: #101111;
-    padding: 20px 15px; /* Adicionei padding lateral */
+    gap: 15px; /* Aumentei o espaço entre os itens */
+    padding: 20px 15px;
     scroll-snap-type: x mandatory;
 }
 
 .info-box {
     width: 200px;
     padding: 15px;
-    background-color: #0909ed;
+    background-color: #007bff; /* Azul padrão */
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
     scroll-snap-align: center;
 }
@@ -126,7 +122,7 @@ nav a:hover {
     width: 50px;
     height: auto;
     margin-bottom: 10px;
-    display: block; /* Melhora o alinhamento */
+    display: block;
 }
 
 /* Cards dos cursos */
@@ -135,20 +131,21 @@ nav a:hover {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 20px;
-    padding: 40px 15px; /* Adicionei padding lateral */
+    padding: 40px 15px;
     scroll-snap-type: x mandatory;
     justify-content: center;
-    max-width: 1200px; /* Adicionei limite máximo */
-    margin: 0 auto; /* Centralização */
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-behavior: smooth; /* Adicionei comportamento suave ao scroll */
 }
 
 .card {
-    background-color: rgb(5, 22, 54);
+    background-color: #1f1f1f; /* Cor de fundo dos cards */
     width: 250px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease; /* Especifiquei easing */
+    transition: transform 0.3s ease;
     flex-shrink: 0;
     scroll-snap-align: center;
 }
@@ -167,19 +164,21 @@ nav a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    display: block; /* Remove espaço inferior */
+    display: block;
 }
 
 .card-title {
     margin-top: 10px;
     font-size: 1.2em;
     font-weight: bold;
+    color: #ffffff; /* Cor do título */
 }
 
 .card-des {
     font-size: 0.9em;
     margin-top: 5px;
-    line-height: 1.4; /* Melhora legibilidade */
+    line-height: 1.4;
+    color: #b0b0b0; /* Cor da descrição */
 }
 
 /* Botões de Login Coloridos */
@@ -188,7 +187,7 @@ nav a:hover {
     gap: 15px;
     justify-content: center;
     margin-top: 20px;
-    padding: 0 15px; /* Adicionei padding lateral */
+    padding: 0 15px;
 }
 
 .btn {
@@ -196,12 +195,12 @@ nav a:hover {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s; /* Padronizei nome das propriedades */
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .login {
     background-color: #007bff;
-    color: #000000; /* Padronizei para hexadecimal */
+    color: #ffffff; /* Cor do texto */
 }
 
 .login:hover {
@@ -215,7 +214,7 @@ nav a:hover {
 }
 
 .signup:hover {
-    background-color: #1e7e34;
+    background-color: #218838;
     transform: scale(1.05);
 }
 
@@ -229,15 +228,24 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+.info-text {
+    color: #e0e0e0; /* Cor do texto informativo */
+}
+
+.info-tex {
+    font-size: 1.2em;
+    color: #e0e0e0; /* Cor do texto informativo */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     html, body {
-        font-size: 16px; /* Reduzi tamanho base para mobile */
+        font-size: 16px;
     }
 
     .hero {
         flex-direction: column;
-        padding: 30px 15px; /* Ajustei padding */
+        padding: 30px 15px;
     }
     
     .right {
@@ -246,14 +254,18 @@ nav a:hover {
     
     .info-container, 
     .cards-container {
-        padding: 20px 10px; /* Ajustei padding */
+        padding: 20px 10px;
     }
 
     .card {
-        width: 220px; /* Reduzi largura em mobile */
+        width: 220px;
     }
 
     .info-box {
-        width: 180px; /* Reduzi largura em mobile */
+        width: 180px;
+    }
+
+    .cards-container {
+        overflow-x: scroll; /* Adicionei overflow-x para permitir rolagem horizontal */
     }
 }

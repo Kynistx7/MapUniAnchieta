@@ -8,7 +8,7 @@
 
 html, body {
     height: 100%;
-    background-color: #f0f0f4;
+    background-color: #121212;
     color: #333; /* Alterado para melhorar a legibilidade */
     text-align: center;
 }
@@ -16,7 +16,7 @@ html, body {
 /* Cabeçalho */
 header {
     padding: 20px 0;
-    background-color: rgb(5,22, 54);
+    background-color: #000000;
     border-bottom: 2px solid #f0f0f4;
     display: flex;
     justify-content: space-between;
@@ -81,7 +81,7 @@ gmp-map {
     width: 250px;
     padding: 15px;
     font-size: 16px;
-    background: rgba(3, 22, 54);
+    background: rgb(249, 250, 251);
     border-radius: 8px;
     display: block;
     margin-bottom: 5px;
@@ -101,30 +101,13 @@ gmp-map {
 }
 
 #destino-select:focus {
-    background: rgb(3, 22, 54);
+    background: rgb(249, 250, 253);
     font-family: 'Times New Roman', Times, serif;
 }
 
 .destino label {
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
-}
-
-#ir-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: rgb(248, 244, 244);
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
-}
-
-#ir-button:hover {
-    background-color: #0056b3;
 }
 
 /* Responsividade */
