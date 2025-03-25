@@ -239,33 +239,26 @@ nav a:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    html, body {
-        font-size: 16px;
-    }
-
     .hero {
-        flex-direction: column;
-        padding: 30px 15px;
+        flex-direction: column; /* Empilha os elementos */
+        align-items: center;
+        text-align: center;
     }
-    
+
     .right {
-        order: -1;
-    }
-    
-    .info-container, 
-    .cards-container {
-        padding: 20px 10px;
+        display: none; /* Oculta o mapa no mobile */
     }
 
-    .card {
-        width: 220px;
+    .left {
+        width: 100%; /* Garante que o texto ocupe toda a largura */
+        padding: 0 15px;
     }
 
-    .info-box {
-        width: 180px;
+    .left h1 {
+        font-size: 1.5em; /* Ajusta o tamanho do título */
     }
 
-    .cards-container {
-        overflow-x: scroll; /* Adicionei overflow-x para permitir rolagem horizontal */
+    .left p {
+        font-size: 1em; /* Mantém um tamanho confortável para leitura */
     }
 }
