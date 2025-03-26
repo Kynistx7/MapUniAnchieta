@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - UniMaps</title>
     <link rel="stylesheet" href="ProjetoMapsUni/css/faq.css">
+    <style>
+        .hidden-text {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header></header> <!-- Navbar será carregada aqui -->
-    
+    <header></header>
     <main>
         <div class="content">
             <div class="faq">
@@ -17,35 +21,52 @@
                     <button class="faq-question">How does UniMaps work?</button>
                     <div class="faq-answer">
                         <p>UniMaps locates your classroom based on your course and subject. Simply enter your information, and the app will show you the building, floor, and room.</p>
+                        <p class="hidden-text">Novo texto para "How does UniMaps work?".</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Is UniMaps available for all Unianchieta courses?</button>
                     <div class="faq-answer">
                         <p>Yes! UniMaps covers all courses and subjects offered at Unianchieta, ensuring students find their classrooms easily.</p>
+                        <p class="hidden-text">Novo texto para "Is UniMaps available for all Unianchieta courses?".</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Do I need to create an account to use UniMaps?</button>
                     <div class="faq-answer">
                         <p>No, UniMaps does not require an account. Just select your course and subject, and you’ll get your classroom location instantly.</p>
+                        <p class="hidden-text">Novo texto para "Do I need to create an account to use UniMaps?".</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Can I search for a classroom manually?</button>
                     <div class="faq-answer">
                         <p>Yes! You can also browse buildings, floors, and rooms if you prefer to locate a classroom yourself.</p>
+                        <p class="hidden-text">Novo texto para "Can I search for a classroom manually?".</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Is UniMaps available on mobile devices?</button>
                     <div class="faq-answer">
                         <p>Yes, UniMaps is designed to work on both desktop and mobile devices for easy access anywhere on campus.</p>
+                        <p class="hidden-text">Novo texto para "Is UniMaps available on mobile devices?".</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <script src="js/loadNavbar.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const hiddenText = this.nextElementSibling.querySelector('.hidden-text');
+                if (hiddenText.style.display === 'block') {
+                    hiddenText.style.display = 'none';
+                } else {
+                    hiddenText.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

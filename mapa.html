@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniAnchieta</title>
-    <link rel="stylesheet" href="ProjetoMapsUni/css/style2.css">
+    <link rel="stylesheet" href="ProjetoMapsUni/css/style1.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A7eq27yiiNkJf87NQDnf5N9lEs5mb3M&callback=console.debug&libraries=maps,marker&v=beta"></script>
@@ -15,20 +15,18 @@
         <nav aria-label="Navegação Principal">
             <a href="https://kynistx7.github.io/LoginUni/" id="login-link">Home</a>
             <a href="faq.html" class="bntentrar">FAQ</a>
-            <a href="https://anchieta.br/" class="bntacssite">Contato</a>
         </nav>
     </header>
     <br>
-    <h3>Mapa com Marcador</h3>
-    <div id="map" style="width: 80%; height: 350px; margin: 20px auto; border: 1px solid #fdfafa;"></div>
+    <div id="map" style="width: 75%; height: 350px; margin: 20px auto; border: 1px solid #fdfafa;"></div>
     <br>
-    
-
-    <gmp-map center="-23.214570999145508,-46.8909797668457" zoom="14" map-id="DEMO_MAP_ID" style="width: 80%; height: 350px; margin: 20px auto ; border: 1px solid ;">
+    <div>
+        <img src="ProjetoMapsUni/templetes/Unianchieta-online-mapa-campus-g-Corrigida-2048x1130.webp" alt="imagem" style="height: 350px; margin: 20px auto; border: 1px solid #fdfafa;">
+    </div>
+    </div>
+    <gmp-map center="-23.214570999145508,-46.8909797668457" zoom="14" map-id="DEMO_MAP_ID" style="width: 75%; height: 350px; margin: 20px auto ; border: 1px solid ;">
         <gmp-advanced-marker position="-23.214570999145508,-46.8909797668457" title="Localização UniAnchieta"></gmp-advanced-marker>
     </gmp-map>
-
-
     <script>// Função para obter parâmetros da URL
         function getParametroURL(nome) {
             const urlParams = new URLSearchParams(window.location.search);
