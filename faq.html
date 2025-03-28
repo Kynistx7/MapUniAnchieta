@@ -6,65 +6,66 @@
     <title>FAQ - UniMaps</title>
     <link rel="stylesheet" href="ProjetoMapsUni/css/faq.css">
     <style>
-        .hidden-text {
+        .faq-answer {
             display: none;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .faq-answer.show {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <header></header>
+    <header>
+        <img src="ProjetoMapsUni/templetes/Grupo-Anchieta-01 (2).png" alt="UniAnchieta logo" class="logod" width="200px">
+        <nav aria-label="Navegação Principal">
+            <a href="index.html" id="login-link">Home</a>
+            <a href="faq.html" class="bntentrar">FAQ</a>
+        </nav>
+    </header>
     <main>
         <div class="content">
             <div class="faq">
                 <h1>FAQ - UniMaps</h1>
                 <div class="faq-item">
-                    <button class="faq-question">How does UniMaps work?</button>
+                    <button class="faq-question">Como o UniMaps funciona?</button>
                     <div class="faq-answer">
-                        <p>UniMaps locates your classroom based on your course and subject. Simply enter your information, and the app will show you the building, floor, and room.</p>
-                        <p class="hidden-text">Novo texto para "How does UniMaps work?".</p>
+                        <p>O UniMaps localiza sua sala de aula com base em seu curso e assunto. Basta inserir suas informações, e o aplicativo irá mostrar-lhe o edifício, o chão e o quarto.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Is UniMaps available for all Unianchieta courses?</button>
+                    <button class="faq-question">O UniMaps está disponível para todos os cursos da Unianchieta?</button>
                     <div class="faq-answer">
-                        <p>Yes! UniMaps covers all courses and subjects offered at Unianchieta, ensuring students find their classrooms easily.</p>
-                        <p class="hidden-text">Novo texto para "Is UniMaps available for all Unianchieta courses?".</p>
+                        <p>Sim! O UniMaps cobre todos os cursos e disciplinas oferecidos na Unianchieta, garantindo que os alunos encontrem suas salas de aula facilmente.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Do I need to create an account to use UniMaps?</button>
+                    <button class="faq-question">Preciso criar uma conta para usar o UniMaps?</button>
                     <div class="faq-answer">
-                        <p>No, UniMaps does not require an account. Just select your course and subject, and you’ll get your classroom location instantly.</p>
-                        <p class="hidden-text">Novo texto para "Do I need to create an account to use UniMaps?".</p>
+                        <p>Sim! Para uma melhor experiencia é nescessario possuir uma conta.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">Can I search for a classroom manually?</button>
-                    <div class="faq-answer">
-                        <p>Yes! You can also browse buildings, floors, and rooms if you prefer to locate a classroom yourself.</p>
-                        <p class="hidden-text">Novo texto para "Can I search for a classroom manually?".</p>
-                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Is UniMaps available on mobile devices?</button>
+                    <button class="faq-question">O UniMaps está disponível em dispositivos móveis?</button>
                     <div class="faq-answer">
-                        <p>Yes, UniMaps is designed to work on both desktop and mobile devices for easy access anywhere on campus.</p>
-                        <p class="hidden-text">Novo texto para "Is UniMaps available on mobile devices?".</p>
+                        <p>Sim, o UniMaps foi projetado para funcionar tanto em computadores desktop quanto em dispositivos móveis para facilitar o acesso em qualquer lugar do campus.</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <script src="js/loadNavbar.js"></script>
     <script>
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', function() {
-                const hiddenText = this.nextElementSibling.querySelector('.hidden-text');
-                if (hiddenText.style.display === 'block') {
-                    hiddenText.style.display = 'none';
-                } else {
-                    hiddenText.style.display = 'block';
-                }
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                });
             });
         });
     </script>

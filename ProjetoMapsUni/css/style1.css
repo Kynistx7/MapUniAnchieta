@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    text-align: center;
+    text-align: left; /* Alterado para alinhar o texto à esquerda */
 }
 
 html, body {
@@ -46,7 +46,7 @@ header .logod {
 /* Menu de navegação */
 nav {
     display: flex;
-    gap: 15px; /* Aumentei o espaço entre os itens */
+    gap: 15px;
     justify-content: flex-end;
     padding: 10px 0;
 }
@@ -61,7 +61,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(0, 123, 255, 0.8); /* Azul mais suave */
+    background-color: rgba(0, 123, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -79,10 +79,16 @@ nav a:hover {
 
 .left {
     max-width: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left h1, .left p {
+    text-align: left; /* Garantindo alinhamento à esquerda */
 }
 
 .left h1 span {
-    color: #007bff; /* Azul padrão */
+    color: #007bff;
 }
 
 .right {
@@ -103,7 +109,7 @@ nav a:hover {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: center;
-    gap: 15px; /* Aumentei o espaço entre os itens */
+    gap: 15px;
     padding: 20px 15px;
     scroll-snap-type: x mandatory;
 }
@@ -111,11 +117,12 @@ nav a:hover {
 .info-box {
     width: 200px;
     padding: 15px;
-    background-color: #007bff; /* Azul padrão */
+    background-color: #007bff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
     scroll-snap-align: center;
+    text-align: left; /* Alinhamento à esquerda */
 }
 
 .info-icon {
@@ -136,11 +143,11 @@ nav a:hover {
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
-    scroll-behavior: smooth; /* Adicionei comportamento suave ao scroll */
+    scroll-behavior: smooth;
 }
 
 .card {
-    background-color: #1f1f1f; /* Cor de fundo dos cards */
+    background-color: #1f1f1f;
     width: 250px;
     padding: 15px;
     border-radius: 10px;
@@ -148,6 +155,7 @@ nav a:hover {
     transition: transform 0.3s ease;
     flex-shrink: 0;
     scroll-snap-align: center;
+    text-align: left; /* Alinhando texto dentro dos cards */
 }
 
 .card:hover {
@@ -171,21 +179,21 @@ nav a:hover {
     margin-top: 10px;
     font-size: 1.2em;
     font-weight: bold;
-    color: #ffffff; /* Cor do título */
+    color: #ffffff;
 }
 
 .card-des {
     font-size: 0.9em;
     margin-top: 5px;
     line-height: 1.4;
-    color: #b0b0b0; /* Cor da descrição */
+    color: #b0b0b0;
 }
 
 /* Botões de Login Coloridos */
 .buttons {
     display: flex;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 20px;
     padding: 0 15px;
 }
@@ -200,7 +208,7 @@ nav a:hover {
 
 .login {
     background-color: #007bff;
-    color: #ffffff; /* Cor do texto */
+    color: #ffffff;
 }
 
 .login:hover {
@@ -221,6 +229,7 @@ nav a:hover {
 .register {
     background-color: #ffc107;
     color: #000000;
+    
 }
 
 .register:hover {
@@ -228,37 +237,33 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-.info-text {
-    color: #e0e0e0; /* Cor do texto informativo */
-}
-
-.info-tex {
-    font-size: 1.2em;
-    color: #e0e0e0; /* Cor do texto informativo */
+.info-text, .info-tex {
+    color: #e0e0e0;
+    text-align: left; /* Ajustando alinhamento do texto informativo */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .hero {
-        flex-direction: column; /* Empilha os elementos */
+        flex-direction: column;
         align-items: center;
-        text-align: center;
+        text-align: left;
     }
 
     .right {
-        display: none; /* Oculta o mapa no mobile */
+        display: none;
     }
 
     .left {
-        width: 100%; /* Garante que o texto ocupe toda a largura */
+        width: 100%;
         padding: 0 15px;
     }
 
     .left h1 {
-        font-size: 1.5em; /* Ajusta o tamanho do título */
+        font-size: 1.5em;
     }
 
     .left p {
-        font-size: 1em; /* Mantém um tamanho confortável para leitura */
+        font-size: 1em;
     }
 }
