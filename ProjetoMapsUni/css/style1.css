@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    text-align: left; /* Alterado para alinhar o texto à esquerda */
+    text-align: center; /* Alterado para alinhar o texto à esquerda */
 }
 
 html, body {
@@ -84,7 +84,7 @@ nav a:hover {
 }
 
 .left h1, .left p {
-    text-align: left; /* Garantindo alinhamento à esquerda */
+    text-align: center; /* Garantindo alinhamento à esquerda */
 }
 
 .left h1 span {
@@ -101,6 +101,7 @@ nav a:hover {
     max-width: 100%;
     height: auto;
     display: block;
+    align-items: center;
 }
 
 /* Container de Informações */
